@@ -2,10 +2,11 @@ import React from 'react';
 import {Switch,Route} from "react-router-dom";
 
 import './App.css';
-import Homepage from "./pages/homepage";
+import Homepage from "./pages/homePage/homepage";
+import ShopPage from "./pages/shop/shop";
 
 const HatsPage = (props) => {
-  console.log(props)
+  // console.log(props)
   return (
     <div>
     <h1>Hats page</h1>
@@ -14,15 +15,6 @@ const HatsPage = (props) => {
 
 }
 
-const HatPage = (props) => {
-  console.log(props)
-  return (
-    <div>
-    <h1> Hat {props.match.params.hatId} </h1>
-  </div>
-  )
-
-}
 
 
 function App() {
@@ -31,7 +23,7 @@ function App() {
       <Switch>
         <Route exact path='/' component={Homepage}/>
         <Route  exact path='/hats' component={HatsPage}/>
-        <Route  path='/hats/:hatId' component={HatPage}/>
+        <Route  path='/shop' component={ShopPage}/>
       </Switch>
       
     </div>
