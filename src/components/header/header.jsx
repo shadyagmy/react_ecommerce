@@ -6,6 +6,7 @@ import "./header.scss"
 import {ReactComponent as Logo} from "../../assets/original.svg";
 
 export default function Header({currentUser}) {
+    
     return (
         <div className='header'>
             <Link  className="logo-container" to="/">
@@ -17,7 +18,8 @@ export default function Header({currentUser}) {
                
                 {
                     currentUser ? 
-                    <div className="option" onClick={() => auth.signOut()}>Sign out</div>
+                    
+                    <div className="option" onClick={() =>  auth.signOut() }>Sign out</div>
                     :
                     <Link className="option" to="./signin">sign in</Link>
 
@@ -27,3 +29,4 @@ export default function Header({currentUser}) {
         </div>
     )
 }
+

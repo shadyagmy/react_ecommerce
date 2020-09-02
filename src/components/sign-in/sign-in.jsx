@@ -17,16 +17,16 @@ export default class SignIn extends Component {
 
     }
 
-
-    handelSubmit = event => {
-        event.preventDefault();
+    handelSubmit = e => {
+        e.preventDefault();
 
         this.setState({email: '', password : ''})
     }
 
-    handelChange = event => {
-        const {value, name} = event.target;
+    handelChange = e => {
+        const {value, name} = e.target;
         this.setState({[name]: value})
+       
     }
 
     render() {
@@ -36,7 +36,8 @@ export default class SignIn extends Component {
                 <span>Sign in with your email and password </span>
 
                 <form  onSubmit={this.handelSubmit}>
-                     <FormInput id="email"
+                     <FormInput 
+                        id="email"
                         name="email"
                         type="email"
                         value={this.state.email}
@@ -45,15 +46,15 @@ export default class SignIn extends Component {
                         label ="Email"
                         />
                      
-                     <FormInput id="password"
-                            name="password"
-                            type="password"
-                            value={this.state.password}
-                            onChange={this.handelChange}
-                            required
-                            label ="Password"
-                           
-                            />
+                     <FormInput 
+                        id="password"
+                        name="password"
+                        type="password"
+                        value={this.state.password}
+                        onChange={this.handelChange}
+                        required
+                        label ="Password"
+                        />
                     
                     <div className="buttons">
                         <CustomButton type="submit" >Sign in</CustomButton>
